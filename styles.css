@@ -1,0 +1,435 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #e0e0e0;
+  background: linear-gradient(135deg, #121212, #1a1a1a);
+  overflow-x: hidden;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(45deg, #1f1f1f, #292929);
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 1000px;
+  margin-left: 1rem;
+  color: #ffe66d;
+  text-shadow: 2px 2px 8px rgba(255, 230, 109, 0.8);
+  
+}
+
+header .menu-button {
+  display: none;
+  background: linear-gradient(90deg, #ffe66d, #ff6347);
+  color: #121212;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-left: 2rem;
+}
+
+header .menu-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(255, 99, 71, 0.5);
+}
+
+header nav {
+  flex-grow: 1;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+header nav ul li a {
+  color: #ffe66d;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease-in-out, transform 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ff6347;
+  transform: scale(1.1);
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #ff6347;
+  transition: width 0.3s ease-in-out;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Popup Menu for Phones */
+header .popup-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1001;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+header .popup-menu ul {
+  list-style:none;
+}
+
+header .popup-menu ul li a {
+  font-size: 1.8rem;
+  color: #ffe66d;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+header .popup-menu ul li a:hover {
+  color: #ff6347;
+  transform: scale(1.2);
+}
+
+header .popup-menu .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #ffe66d;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header .popup-menu .close-button:hover {
+  color: #ff6347;
+  transform: rotate(90deg);
+}
+
+/* Project Section */
+.project {
+  background: linear-gradient(135deg, #292929, #333333);
+  border: 1px solid #444;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  transition: transform 0.4s, box-shadow 0.4s;
+  position: relative;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+
+.project h3 {
+  color: #ffe66d;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.project h3::before {
+  content: "🚀";
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: #ff6347;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #d3d3d3;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #ffe66d, #ff6347);
+  color: #121212;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project a:hover {
+  background: linear-gradient(90deg, #ff6347, #ffe66d);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
+  }
+
+  header .menu-button {
+    display: block;
+    margin-right: 1rem;
+  }
+
+  header .popup-menu {
+    display: flex;
+  }
+}
+
+/* Section Text Styling */
+section {
+  padding: 4rem 2rem;
+  color: #e0e0e0;
+  background: #181818;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  transition: background 0.4s, transform 0.4s;
+}
+
+section:hover {
+  background: #292929;
+  transform: translateY(-5px);
+}
+
+section h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffe66d;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: #ff6347;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+section p {
+  font-size: 1.1rem;
+  color: #d3d3d3;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  letter-spacing: 0.5px;
+}
+
+section p:hover {
+  color: #ffe66d;
+  transform: scale(1.03);
+}
+
+/* Welcome Section */
+#welcome {
+  background: linear-gradient(135deg, #0a0a0a, #1b1b1b);
+}
+
+#welcome h2 {
+  font-size: 3.5rem;
+  color: #ffe66d;
+  text-shadow: 2px 2px 8px rgba(255, 230, 109, 0.8);
+}
+
+#welcome p {
+  font-size: 1.3rem;
+  color: #d3d3d3;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#welcome p:hover {
+  color: #ffe66d;
+  transform: scale(1.02);
+}
+
+/* About Me Section */
+#about {
+  background: linear-gradient(135deg, #333333, #444444);
+}
+
+#about h2 {
+  font-size: 3rem;
+  color: #ffe66d;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 1.1rem;
+  color: #d3d3d3;
+  margin-top: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+#about p:hover {
+  color: #ffe66d;
+  transform: scale(1.05);
+}
+
+/* footer section */
+footer{
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4rem;
+  padding-bottom: 3rem;
+}
+
+/* styling for contact html file */
+#contact-me {
+  padding: 2rem;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Container Styling */
+#contact-me .main {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Heading Styling */
+#contact-me h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph Styling */
+#contact-me p {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Styling for the list */
+#contact-me ul {
+  font-size: 2rem;
+  color: #0a66c2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of the list items */
+  gap: 7rem; /* Add space between items */
+  justify-content: center; /* Center the items */
+}
+
+/* Contact Link Styling */
+#contact-me a {
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  background-color: #0a66c2; /* LinkedIn blue */
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+  /* Limit the width to a maximum size */
+  text-align: center; /* Center the text inside the link */
+  display: inline-block; /* Ensures it takes up space but doesn't force full width */
+}
+
+/* Hover effect */
+#contact-me a:hover {
+  background-color: #b3def6; 
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Active state when clicked */
+#contact-me a:active {
+  transform: scale(0.98);
+}
+
+/* Optional: Style for the list items */
+#contact-me li {
+  display: inline-block; /* Allow items to be placed next to each other */
+}
+
+/* about html file*/
+.coding-profiles {
+  margin-top: 20px;
+  text-align: center;
+}
+.coding-profiles h3{
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+
+.coding-profiles a {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 10px;
+  padding: 10px 15px;
+  transition: background 0.3s;
+  background: linear-gradient(90deg, #ffe66d, #ff6347);
+  color: #121212;
+  text-decoration: none;
+  border-radius: 5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.coding-profiles a:hover {
+  background: linear-gradient(90deg, #ff6347, #ffe66d);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+}
