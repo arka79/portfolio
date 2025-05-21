@@ -1,5 +1,4 @@
-PORTFOLIIO
-<div>
-<img src="[C:\Users\hp\Desktop\portfolio ss](https://github.com/user-attachments/assets/22def953-a7ae-46be-8e4c-b1c1a4327cff)">
-</div>
+PORTFOLIO
 
+
+![portfolio ss](https://github.com/user-attachments/assets/1f5a839d-5580-495e-9767-99b01d8d193e)
